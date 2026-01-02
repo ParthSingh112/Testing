@@ -1,0 +1,128 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "E1_Control_Room",
+      "archetype": "Electric & Neon",
+      "core_philosophy": "Precision through Chaos. The interface is a cockpit for developers.",
+      "emotional_tone": "Commanding, High-Velocity, Transparent",
+      "theme_strategy": "Dark Mode Default (The Terminal Aesthetic)"
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Chivo, sans-serif",
+        "body": "Manrope, sans-serif",
+        "code": "JetBrains Mono, monospace"
+      },
+      "scaling": {
+        "h1": "text-5xl md:text-7xl font-black tracking-tighter",
+        "h2": "text-3xl md:text-5xl font-bold tracking-tight",
+        "h3": "text-2xl font-semibold tracking-tight",
+        "body": "text-base leading-relaxed text-muted-foreground",
+        "code": "text-sm font-mono"
+      },
+      "imports": [
+        "@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap');"
+      ]
+    },
+    "colors": {
+      "palette": {
+        "background": "#0A0A0B",
+        "surface": "#121214",
+        "surface_highlight": "#1C1C1F",
+        "primary": "#00E5FF",
+        "primary_foreground": "#000000",
+        "secondary": "#CCFF00",
+        "secondary_foreground": "#000000",
+        "destructive": "#FF2E63",
+        "destructive_foreground": "#FFFFFF",
+        "muted": "#27272A",
+        "muted_foreground": "#A1A1AA",
+        "border": "#27272A",
+        "accent": "#00E5FF"
+      },
+      "usage_rules": {
+        "primary": "Use Electric Cyan (#00E5FF) for primary actions, active states, and key data points. NEVER use generic teal.",
+        "secondary": "Use Acid Lime (#CCFF00) for 'Success', 'Running', and 'Online' indicators.",
+        "destructive": "Use Neon Red (#FF2E63) for 'Failed', 'Error', and 'Bug' indicators.",
+        "background": "Deep Void Black (#0A0A0B). Avoid pure black (#000000).",
+        "gradients": "Avoid full gradients. Use 'Glow' effects: radial-gradient(circle at center, var(--primary) 0%, transparent 70%) with low opacity."
+      }
+    },
+    "layout": {
+      "spacing_scale": "Generous. Use p-6, p-8, p-12. Dense data grids use p-4.",
+      "grid_system": {
+        "dashboard": "Control Room Grid: grid-cols-12 gap-4. Widgets span 3, 4, or 6 columns. Full height stretch.",
+        "landing": "Tetris Grid: Asymmetrical bento box. Mix tall (row-span-2) and wide (col-span-2) elements."
+      },
+      "border_radius": {
+        "outer": "rounded-xl",
+        "inner": "rounded-lg",
+        "buttons": "rounded-md"
+      }
+    },
+    "visual_enhancers": {
+      "glassmorphism": "backdrop-blur-xl bg-black/40 border border-white/10 (Use for Nav and Floating Panels)",
+      "tracing_beam": "Animated gradient border for active test execution cards.",
+      "scanlines": "Subtle repeating-linear-gradient(transparent 50%, rgba(0, 0, 0, 0.2) 50%) background-size: 100% 4px; (Use for Log Viewer)",
+      "glow": "box-shadow: 0 0 20px -5px var(--primary) (Use for active buttons and status indicators)"
+    },
+    "motion": {
+      "transitions": "transition-all duration-300 ease-out",
+      "micro_interactions": {
+        "hover": "transform: translateY(-2px)",
+        "active": "transform: scale(0.98)",
+        "loading": "animate-pulse"
+      },
+      "libraries": ["framer-motion"]
+    }
+  },
+  "components": {
+    "library": "shadcn/ui",
+    "customization_rules": {
+      "Card": "Remove shadow. Add 1px border (border-white/10). Hover: border-primary/50.",
+      "Button": "Sharp or slightly rounded (rounded-md). Primary: bg-primary text-black font-bold hover:shadow-[0_0_15px_rgba(0,229,255,0.5)].",
+      "Input": "bg-surface border-white/10 focus:border-primary focus:ring-1 focus:ring-primary",
+      "Table": "Compact. Header: text-muted-foreground uppercase tracking-wider text-xs. Row hover: bg-white/5.",
+      "Toast": "Use Sonner. Dark theme default."
+    },
+    "specific_components": {
+      "LogViewer": {
+        "font": "JetBrains Mono",
+        "style": "Terminal aesthetic. Black bg, green/white text. Auto-scroll.",
+        "features": "Search, Filter, Timestamp toggle"
+      },
+      "TestStatusIndicator": {
+        "style": "Pulsing dot (animate-ping) + Solid dot. Green for Running, Red for Failed."
+      }
+    }
+  },
+  "assets": {
+    "icons": "lucide-react",
+    "images": {
+      "hero_background": {
+        "url": "https://images.unsplash.com/photo-1762278804996-eab062703db3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRpZ2l0YWwlMjBkYXRhJTIwZmxvdyUyMGJsdWUlMjBjeWFufGVufDB8fHx8MTc2NzMzNDcwNXww&ixlib=rb-4.1.0&q=85",
+        "alt": "Abstract Blue Digital Waves",
+        "usage": "Hero Section Background with overlay"
+      },
+      "feature_speed": {
+        "url": "https://images.unsplash.com/photo-1762279389006-43963a0cee55?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMGRpZ2l0YWwlMjBkYXRhJTIwZmxvdyUyMGJsdWUlMjBjeWFufGVufDB8fHx8MTc2NzMzNDcwNXww&ixlib=rb-4.1.0&q=85",
+        "alt": "Neon Lines Speed",
+        "usage": "Performance/Speed Feature Card"
+      },
+      "team_context": {
+        "url": "https://images.unsplash.com/photo-1719400471588-575b23e27bd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BlciUyMGNvZGluZyUyMGRhcmslMjByb29tfGVufDB8fHx8MTc2NzMzNDcwNnww&ixlib=rb-4.1.0&q=85",
+        "alt": "Developer at Work",
+        "usage": "About/Team Section or Dashboard Empty State"
+      }
+    }
+  },
+  "universal_guidelines": [
+    "DO NOT use generic gradients. Use solid colors or subtle noise textures.",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Use 'JetBrains Mono' for ANY data, numbers, or code snippets.",
+    "Dashboard must be dense. Avoid excessive whitespace in data grids.",
+    "Use 'Electric Cyan' (#00E5FF) sparingly for impact. Do not overuse.",
+    "Implement a 'Live' feel using pulsing indicators for real-time data."
+  ],
+  "instructions_to_main_agent": "You are building a high-performance tool. Prioritize rendering speed and data density. The UI should feel like a futuristic HUD. Use the provided image URLs for the landing page. For the dashboard, rely on CSS-based visuals (borders, glows) rather than images to keep it lightweight."
+}
